@@ -31,6 +31,7 @@ public:
 	void add_letter(char c);
 	bool advance();
 	bool collides(const sf::Vector2f& pos) const;
+	bool contains(const sf::Vector2f& pos) const;
 	void draw(sf::RenderWindow& win);
 	void set_direction(Direction d);
 };

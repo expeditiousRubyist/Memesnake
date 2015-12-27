@@ -127,8 +127,14 @@ bool Memesnake::advance()
 	return false;
 }
 
-// Check if any of the letters in the snake collide with a position
+// Check if the head of the snake collides with a position
 bool Memesnake::collides(const sf::Vector2f& pos) const
+{
+	return (pos == _letters[0].getPosition());
+}
+
+// Check if any of the letters in the snake collide with a position
+bool Memesnake::contains(const sf::Vector2f& pos) const
 {
 	for (const auto& l : _letters) {
 		if (l.getPosition() == pos) return true;

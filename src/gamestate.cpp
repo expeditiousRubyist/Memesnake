@@ -59,7 +59,7 @@ namespace GameState {
 			int x = (rand() % MAX_ROWS) * LETTER_WIDTH;
 			int y = (rand() % MAX_COLS) * LETTER_HEIGHT;
 			next_char.setPosition(x, y);
-		} while (snake->collides(next_char.getPosition()));
+		} while (snake->contains(next_char.getPosition()));
 	}
 
 	bool lost()
@@ -91,7 +91,7 @@ namespace GameState {
 				int x = (rand() % MAX_ROWS) * LETTER_WIDTH;
 				int y = (rand() % MAX_COLS) * LETTER_HEIGHT;
 				next_char.setPosition(x, y);
-			} while (snake->collides(next_char.getPosition()));
+			} while (snake->contains(next_char.getPosition()));
 
 			game_score++;
 		}
