@@ -1,0 +1,5 @@
+# Binaries
+*.dll
+*.exe
+obj/*.o
+memesnake
