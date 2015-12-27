@@ -23,5 +23,7 @@ constexpr int LETTER_HEIGHT     = 20;
 constexpr int LETTER_WIDTH      = 13;
 constexpr int WINDOW_HEIGHT     = 480;
 constexpr int WINDOW_WIDTH      = 640;
+constexpr int MAX_TICKS_RATE    = 120;
+constexpr int MIN_TICKS_RATE    = 30;
 
 #endif // __MEMESNAKE_CONSTANTS_HPP__

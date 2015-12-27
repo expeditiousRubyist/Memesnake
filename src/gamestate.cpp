@@ -44,7 +44,7 @@ namespace GameState {
 		game_over = false;
 		game_score = 1;
 		tick = 1;
-		ticks_per_advance = 120;
+		ticks_per_advance = MAX_TICKS_RATE;
 		char_index = 1 % word.size();
 
 		snake = &memesnake;
@@ -82,6 +82,7 @@ namespace GameState {
 
 		// Check for a collision with the letter
 		if (snake->collides(next_char.getPosition())) {
+			// Add the new letter to the snake
 			snake->add_letter(word[char_index]);
 			char_index = (char_index + 1) % word.size();
 
@@ -93,7 +94,13 @@ namespace GameState {
 				next_char.setPosition(x, y);
 			} while (snake->contains(next_char.getPosition()));
 
+			// Update the score
 			game_score++;
+
+			// Speed up the snake ever so slightly
+			if (ticks_per_advance > MIN_TICKS_RATE) {
+				ticks_per_advance--;
+			}
 		}
 
 		// Draw snake and text
